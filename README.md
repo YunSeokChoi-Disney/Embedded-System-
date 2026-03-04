@@ -1,6 +1,6 @@
 
 
-<Midterm Project>
+**Midterm Project**
 
 This project focused on enabling an autonomous Wave Rover to perceive its surroundings and execute specific driving missions using YOLO-based object detection and PID control.
 
@@ -18,7 +18,7 @@ Task 2: Sign-based Speed & Stop Control
 
 Task 3: Object Detection & Avoidance Maneuver (Core Task)
 
-*Mission:
+*Mission:Identify obstacles (cars, trucks, etc.) and perform an avoidance maneuver without collision.
 
 *Strategy: Developed a 3-step avoidance algorithm
 
@@ -36,13 +36,13 @@ Task 4: Complex Scenario Integration
 
 [Primary Problem Solving & Technical Insights]
 
-Dataset: Created a robust training set with over 27,000 frames to ensure high detection accuracy across various lighting conditions.
+*Dataset: Created a robust training set with over 27,000 frames to ensure high detection accuracy across various lighting conditions.
 
-Optimization: To resolve oscillation issues during lane-keeping, the PID integral gain (Ki) was fine-tuned (from 0.1 to 0.095), significantly improving driving stability.
+*Optimization: To resolve oscillation issues during lane-keeping, the PID integral gain (Ki) was fine-tuned (from 0.1 to 0.095), significantly improving driving stability.
 
-Note: For detailed technical documentation, including source code and experimental data, please refer to the attached Mid-term/Final Report and Presentation slides in this repository.
+*Note: For detailed technical documentation, including source code and experimental data, please refer to the attached Mid-term Report and Presentation slides in this repository.
 
-<Final Project> 
+**Final Project** 
 
 The final phase of this project focused on enhancing the vehicle's decision-making logic and stabilizing its driving performance based on feedback from the mid-term evaluation.
 
@@ -57,3 +57,5 @@ The final phase of this project focused on enhancing the vehicle's decision-maki
 *The "Wait or Overtake" Logic: Unlike the mid-term project which only dealt with static objects, the final system can now respond to moving vehicles.
 
 *Decision Making: The rover is programmed to wait for a specific duration (e.g., 5 seconds) if a vehicle is detected ahead. If the obstacle remains stationary, the rover automatically initiates the 3-step avoidance maneuver (Avoiding → Straight → Recovery).
+
+*Note: For detailed technical documentation, please refer to the attached Final Presentation Slides in this repository. 
