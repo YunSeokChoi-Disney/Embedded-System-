@@ -44,7 +44,7 @@ Task 4: Complex Scenario Integration
 
 Wave Rover:https://github.com/YunSeokChoi-Disney/Embedded-System-/blob/main/KakaoTalk_20260302_175125699.jpg
 
-Wave Rover task mission 
+Wave Rover task mission video: https://github.com/YunSeokChoi-Disney/Embedded-System-/blob/main/KakaoTalk_20260302_175208768.mp4
 
 **Final Project** 
 
