@@ -42,6 +42,10 @@ Task 4: Complex Scenario Integration
 
 *Note: For detailed technical documentation, including source code and experimental data, please refer to the attached Mid-term Report and Presentation slides in this repository.
 
+Wave Rover:https://github.com/YunSeokChoi-Disney/Embedded-System-/blob/main/KakaoTalk_20260302_175125699.jpg
+
+Wave Rover task mission 
+
 **Final Project** 
 
 The final phase of this project focused on enhancing the vehicle's decision-making logic and stabilizing its driving performance based on feedback from the mid-term evaluation.
