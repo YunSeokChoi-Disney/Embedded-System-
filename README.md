@@ -64,6 +64,8 @@ https://github.com/user-attachments/assets/b2ea1170-c732-42fd-b633-5b6813f8f7cc
 2. **Straight** — maintain a parallel path to bypass the obstacle
 3. **Recovery** — return to the original lane and realign with the center line using PID control
 
+https://github.com/user-attachments/assets/6fe751e3-fc2c-4032-b5fb-4064859021ed
+
 ### Task 4 — Complex Scenario Integration
 
 **Mission:** Navigate intersections while simultaneously processing traffic lights and directional signs (left/right/straight).
