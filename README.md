@@ -1,65 +1,112 @@
+# Jetson-Orin Nano & Wave Rover Autonomous Driving
 
+Autonomous driving system for the **Wave Rover** platform, built on **Jetson Orin Nano** with YOLO-based object detection and PID motor control. Developed as a class project for *Embedded Systems*.
 
-**Midterm Project**
+![Wave Rover](./KakaoTalk_20260302_175125699.jpg)
 
-This project focused on enabling an autonomous Wave Rover to perceive its surroundings and execute specific driving missions using YOLO-based object detection and PID control.
+[Mission demo video](./KakaoTalk_20260302_175208768.mp4)
 
-Task 1: Traffic Light Recognition & Intersection Navigation
+## Table of Contents
 
-*Mission: Detect Red/Green traffic lights at intersections and control the vehicle's movement accordingly.
+- [Overview](#overview)
+- [Midterm Project](#midterm-project)
+  - [Task 1 — Traffic Light Recognition & Intersection Navigation](#task-1--traffic-light-recognition--intersection-navigation)
+  - [Task 2 — Sign-based Speed & Stop Control](#task-2--sign-based-speed--stop-control)
+  - [Task 3 — Object Detection & Avoidance Maneuver](#task-3--object-detection--avoidance-maneuver-core-task)
+  - [Task 4 — Complex Scenario Integration](#task-4--complex-scenario-integration)
+  - [Technical Insights](#technical-insights)
+- [Final Project](#final-project)
+  - [Feedback Loop: Solving Key Challenges](#1-solving-key-challenges-feedback-loop)
+  - [Advanced Mission: Dynamic Obstacle Response](#2-advanced-mission-dynamic-obstacle-response)
+- [Repository Structure](#repository-structure)
+- [Documentation](#documentation)
 
-*Strategy: Implemented a real-time detection logic where the rover stops if a Red light's bounding box exceeds a certain area (indicating proximity) and resumes driving when the signal changes.
+## Overview
 
-Task 2: Sign-based Speed & Stop Control
+| | |
+|---|---|
+| **Platform** | Jetson Orin Nano + Wave Rover |
+| **Perception** | YOLO-based object detection |
+| **Control** | PID-based motor / steering control |
+| **Goal** | Enable the rover to perceive its surroundings and execute autonomous driving missions (traffic lights, signage, obstacle avoidance) |
 
-*Mission: Respond to 'Pedestrian' (Slow down) and 'Stop' signs located on the roadside.
+---
 
-*Strategy: Pulsed PWM (Pulse Width Modulation) to decrease motor output upon detecting a Pedestrian sign. For 'Stop' signs, a timer-based logic was applied to ensure the vehicle remained stationary for a set duration before proceeding.
+## Midterm Project
 
-Task 3: Object Detection & Avoidance Maneuver (Core Task)
+The midterm phase focused on enabling the rover to perceive its surroundings and execute specific driving missions.
 
-*Mission:Identify obstacles (cars, trucks, etc.) and perform an avoidance maneuver without collision.
+### Task 1 — Traffic Light Recognition & Intersection Navigation
 
-*Strategy: Developed a 3-step avoidance algorithm
+**Mission:** Detect red/green traffic lights at intersections and control the vehicle's movement accordingly.
 
-(1st step) Avoiding: Steer away from the center lane upon detection.
+**Strategy:** Real-time detection logic — the rover stops when a red light's bounding box exceeds a certain area (indicating proximity) and resumes driving once the signal changes.
 
-(2nd step) Straight: Maintain a parallel path to bypass the obstacle.
+### Task 2 — Sign-based Speed & Stop Control
 
-(3rd step) Recovery: Return to the original lane and realign with the center line using PID control.
+**Mission:** Respond to *Pedestrian* (slow down) and *Stop* signs on the roadside.
 
-Task 4: Complex Scenario Integration
+**Strategy:** PWM (Pulse Width Modulation) is pulsed to reduce motor output when a pedestrian sign is detected. For stop signs, a timer-based logic keeps the vehicle stationary for a set duration before proceeding.
 
-*Mission: Navigate intersections by simultaneously processing traffic lights and directional signs (Left/Right/Straight).
+### Task 3 — Object Detection & Avoidance Maneuver (Core Task)
 
-*Strategy: Established a decision-making hierarchy to prioritize signals. For instance, the system was programmed to prioritize the Red light signal over any directional signs to ensure safety and compliance.
+**Mission:** Identify obstacles (cars, trucks, etc.) and perform an avoidance maneuver without collision.
 
-[Primary Problem Solving & Technical Insights]
+**Strategy:** A 3-step avoidance algorithm:
 
-*Dataset: Created a robust training set with over 27,000 frames to ensure high detection accuracy across various lighting conditions.
+1. **Avoiding** — steer away from the center lane upon detection
+2. **Straight** — maintain a parallel path to bypass the obstacle
+3. **Recovery** — return to the original lane and realign with the center line using PID control
 
-*Optimization: To resolve oscillation issues during lane-keeping, the PID integral gain (Ki) was fine-tuned (from 0.1 to 0.095), significantly improving driving stability.
+### Task 4 — Complex Scenario Integration
 
-*Note: For detailed technical documentation, including source code and experimental data, please refer to the attached Mid-term Report and Presentation slides in this repository.
+**Mission:** Navigate intersections while simultaneously processing traffic lights and directional signs (left/right/straight).
 
-Wave Rover:https://github.com/YunSeokChoi-Disney/Embedded-System-/blob/main/KakaoTalk_20260302_175125699.jpg
+**Strategy:** A decision-making hierarchy prioritizes signals — the red light signal always takes priority over directional signs to ensure safety and compliance.
 
-Wave Rover task mission video: https://github.com/YunSeokChoi-Disney/Embedded-System-/blob/main/KakaoTalk_20260302_175208768.mp4
+### Technical Insights
 
-**Final Project** 
+- **Dataset:** Over 27,000 frames collected to ensure high detection accuracy across various lighting conditions.
+- **PID tuning:** To resolve oscillation during lane-keeping, the integral gain (Ki) was fine-tuned from `0.1` → `0.095`, significantly improving driving stability.
 
-The final phase of this project focused on enhancing the vehicle's decision-making logic and stabilizing its driving performance based on feedback from the mid-term evaluation.
+For detailed technical documentation, including source code and experimental data, see the [Documentation](#documentation) section below.
 
-1. Solving Key Challenges (Feedback Loop)
-   
-*Stabilizing Control: Addressed the oscillation issues during lane-keeping by fine-tuning the PID parameters, resulting in much smoother and more reliable path-following.
+---
 
-*Enhanced Perception: Expanded the dataset and refined the YOLO model to ensure more consistent detection of various vehicle types and traffic signals under different lighting conditions.
+## Final Project
 
-2. Advanced Mission: Dynamic Obstacle Response
+The final phase focused on enhancing the vehicle's decision-making logic and stabilizing driving performance, based on feedback from the midterm evaluation.
 
-*The "Wait or Overtake" Logic: Unlike the mid-term project which only dealt with static objects, the final system can now respond to moving vehicles.
+### 1. Solving Key Challenges (Feedback Loop)
 
-*Decision Making: The rover is programmed to wait for a specific duration (e.g., 5 seconds) if a vehicle is detected ahead. If the obstacle remains stationary, the rover automatically initiates the 3-step avoidance maneuver (Avoiding → Straight → Recovery).
+- **Stabilizing control:** Fine-tuned PID parameters to resolve lane-keeping oscillation, resulting in smoother, more reliable path-following.
+- **Enhanced perception:** Expanded the dataset and refined the YOLO model for more consistent detection of vehicle types and traffic signals across lighting conditions.
 
-*Note: For detailed technical documentation, please refer to the attached Final Presentation Slides in this repository. 
+### 2. Advanced Mission: Dynamic Obstacle Response
+
+**"Wait or Overtake" logic:** Unlike the midterm project, which only handled static objects, the final system responds to moving vehicles.
+
+**Decision making:** The rover waits for a set duration (e.g. 5 seconds) if a vehicle is detected ahead. If the obstacle remains stationary, the rover automatically initiates the 3-step avoidance maneuver (Avoiding → Straight → Recovery).
+
+For detailed technical documentation, see the Final Presentation Slides in [Documentation](#documentation).
+
+---
+
+## Repository Structure
+
+```
+Embedded-System-/
+├── Final_Project/Your_Own_Problem/     # Final project source & materials
+├── Midterm Project/Task Project/       # Midterm project source & materials
+├── KakaoTalk_20260302_175125699.jpg    # Wave Rover photo
+├── KakaoTalk_20260302_175208768.mp4    # Mission demo video
+└── README.md
+```
+
+## Documentation
+
+| File | Description |
+|---|---|
+| [임베디드 프로젝트 중간보고서(2019048440 최윤석)(최종본).pdf](<./임베디드 프로젝트 중간보고서(2019048440 최윤석)(최종본).pdf>) | Midterm report |
+| [임베디드 프로젝트 중간 발표자료(장경민, 김준성, 최윤석).pdf](<./임베디드 프로젝트 중간 발표자료(장경민, 김준성, 최윤석).pdf>) | Midterm presentation slides |
+| [임베디드_최종(장경민, 김준성, 최윤석).pdf](<./임베디드_최종(장경민, 김준성, 최윤석).pdf>) | Final presentation slides |
