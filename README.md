@@ -50,7 +50,8 @@ https://github.com/user-attachments/assets/dd74f1a1-c7ce-4253-85a5-beb5a8b62da6
 
 **Strategy:** PWM (Pulse Width Modulation) is pulsed to reduce motor output when a pedestrian sign is detected. For stop signs, a timer-based logic keeps the vehicle stationary for a set duration before proceeding.
 
-https://github.com/user-attachments/assets/e7d3280b-2b9b-4d21-9ad9-5626f00b2f9c       
+https://github.com/user-attachments/assets/e7d3280b-2b9b-4d21-9ad9-5626f00b2f9c
+
 https://github.com/user-attachments/assets/b2ea1170-c732-42fd-b633-5b6813f8f7cc
 
 ### Task 3 — Object Detection & Avoidance Maneuver (Core Task)
