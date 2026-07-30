@@ -42,6 +42,8 @@ The midterm phase focused on enabling the rover to perceive its surroundings and
 
 **Strategy:** Real-time detection logic — the rover stops when a red light's bounding box exceeds a certain area (indicating proximity) and resumes driving once the signal changes.
 
+https://github.com/user-attachments/assets/dd74f1a1-c7ce-4253-85a5-beb5a8b62da6
+
 ### Task 2 — Sign-based Speed & Stop Control
 
 **Mission:** Respond to *Pedestrian* (slow down) and *Stop* signs on the roadside.
