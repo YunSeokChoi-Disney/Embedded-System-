@@ -72,6 +72,14 @@ https://github.com/user-attachments/assets/6fe751e3-fc2c-4032-b5fb-4064859021ed
 
 **Strategy:** A decision-making hierarchy prioritizes signals — the red light signal always takes priority over directional signs to ensure safety and compliance.
 
+<table>
+<tr>
+<td align="center"><b>Left Sign</b><br>https://github.com/user-attachments/assets/cbb903b1-deb2-442d-94d5-0f209e99c52d</td>
+<td align="center"><b>Straight Sign</b><br>https://github.com/user-attachments/assets/70582214-4fd3-4d2c-b7d3-2cc9350b60f8</td>
+<td align="center"><b>Right Sign</b><br>https://github.com/user-attachments/assets/373365ae-2b63-4b1a-a31b-4316dc0f1e50</td>
+</tr>
+</table>
+
 ### Technical Insights
 
 - **Dataset:** Over 27,000 frames collected to ensure high detection accuracy across various lighting conditions.
